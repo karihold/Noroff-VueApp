@@ -1,19 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Recipes v-bind:recipes="recipes" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from "axios";
+import Recipes from "./components/Recipes.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {
+      recipes: null
+    };
+  },
   components: {
-    HelloWorld
+    Recipes
+  },
+  methods: {
+    getRecipes() {
+      axios
+        .get(
+          "https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api"
+        )
+        .then(response => {
+          this.recipes = response.data.results;
+        });
+    }
+  },
+  mounted() {
+    this.getRecipes();
   }
-}
+};
 </script>
 
 <style>
