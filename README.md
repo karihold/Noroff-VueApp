@@ -1,24 +1,25 @@
 # noroff-vueapp
 
-## Project setup
+## To install node modules and initialize the app
+
 ```
-yarn install
+yarn install or npm install
 ```
 
-### Compiles and hot-reloads for development
+### To compile the app for development with hot-reloading
+
 ```
-yarn serve
+yarn serve or npm run serve
 ```
 
-### Compiles and minifies for production
+### To compile and minifiy the app for production
+
 ```
-yarn build
+yarn build or npm run build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+### To lints and fix files of the app
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+yarn lint or npm run lint
+```
